@@ -96,6 +96,15 @@ function calcAmountPaid(claim){
 var amountPaid = 0;
 var patientName = '';
 
+//Write header to page
+var $thePage = $('body')
+$thePage.append('<div>');
+$thePage.append('<span>E</span>Epsilon Insurance');
+$thePage.append('<div>');
+$thePage.append('<h1>List of Claims</h1>');
+$thePage.append("<ul>");
+$thePage.append('<div class="short"</div>')
+
 
 //Main processing loop
 //////////////////////
@@ -105,12 +114,17 @@ for (i=0;i<initialList.length;i++){
 	totalPayedOut += amountPaid;
 
 	console.log('Paid out $' + amountPaid + " for " + patientName);
+	$thePage.append('<li>Paid out $<strong>' + amountPaid + "</strong> for <strong>" + patientName +"</strong></li>");
 
 }
 
-	console.log('Total Paid Out: $' + totalPayedOut);
-
 //////////////////////
+console.log('Total Paid Out: $' + totalPayedOut);
+$thePage.append('</ul>');
+$thePage.append('<div class="short"</div>')
+$thePage.append('<h2>Total Paid Out: $' + totalPayedOut +'</h2>');
+$thePage.append('</div>');
+
 
 
 });
